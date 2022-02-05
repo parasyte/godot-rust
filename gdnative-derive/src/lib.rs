@@ -229,9 +229,9 @@ pub fn profiled(meta: TokenStream, input: TokenStream) -> TokenStream {
 /// `get_ref` use `with_ref_getter` to register getter. In this case, your custom getter
 /// should return a shared reference `&T`.
 ///
-/// `get` and `set` can be used without specifying a path, as long as the field type is not
-/// `Property<T>`. In this case, godot-rust generates an accessor function for the field.
-/// For example, `#[property(get)]` will generate a read-only property.
+/// Situations with custom getters/setters and no backing fields require the use of the
+/// type [`Property<T>`][gdnative::export::Property]. Consult its documentation for
+/// a deeper elaboration of property exporting.
 ///
 /// - `no_editor`
 ///
